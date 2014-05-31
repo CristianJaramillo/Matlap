@@ -8,21 +8,23 @@ A=[];
 es=0.5*10^(2-cs);
 xa=a;
 x0=b;   
-x=x0;
-f0=eval(f);
-x=xa;
-fa=eval(f);
+%x=x0;
+%f0=eval(f);
+%x=xa;
+%fa=eval(f);
 
 for inicia=1:n    
-    xi=x0-(f0)*(xa-x0)/(fa-f0)
+   x=x0;f0=eval(f);x=xa;fa=eval(f);
+%   xi=x0-((f0)*(xa-x0))/(fa-f0)
+    xi=x0-((f0)*(xa-x0))/(fa-f0)
     ea=abs((xi-xa)*100/xi);
     A=[A;inicia xi ea]
     xa=x0;
     x0=xi;
-    x=x0;
-    f0=eval(f);
-    x=xa;
-    fa=eval(f);
+    %x=x0;
+    %f0=eval(f);
+    %x=xa;
+    %fa=eval(f);
     
    if ea<es
        break
